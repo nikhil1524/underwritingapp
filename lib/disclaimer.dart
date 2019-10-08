@@ -39,10 +39,10 @@ class DisclaimerScreenWidged extends State<DisclaimerScreen> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        appBar: AppBar(
+        /*appBar: AppBar(
           title: Text("Underwriting"),
           elevation: 0.4,
-        ),
+        ),*/
         body: Stack(fit: StackFit.expand, children: <Widget>[
           Container(decoration: BoxDecoration(color: Colors.white10)),
           Column(

@@ -6,7 +6,7 @@ class HomeScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return new _MyHomePageState();;
+    return new _MyHomePageState();
   }
 }
 /*
@@ -89,7 +89,7 @@ class _MyHomePageState extends State<HomeScreen> {
     AIResponse response = await dialogflow.sendQuery(query);
     ChatMessage message = new ChatMessage(
       text: response.getMessageResponse(),
-      name: "Alf the Bot",
+      name: "Bot",
       type: false,
     );
 
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<HomeScreen> {
     _textController.clear();
     ChatMessage message = new ChatMessage(
       text: text,
-      name: "Me",
+      name: "Nikhil",
       type: true,
     );
     setState(() {

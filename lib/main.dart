@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:insurance_underwriting/disclaimer.dart';
+import 'package:insurance_underwriting/menu.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: title,
         theme: ThemeData(
-            primarySwatch: Colors.blue, bottomAppBarColor: Colors.black),
+            bottomAppBarColor: Colors.black, primaryColor: Colors.blueAccent),
         home: SplashScreen());
   }
 }
@@ -36,7 +37,7 @@ class SplashScreenState extends State<SplashScreen> {
         Duration(seconds: 5),
         () => {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => DisclaimerScreen()))
+                  MaterialPageRoute(builder: (context) => MenuScreen()))
             });
   }
 
