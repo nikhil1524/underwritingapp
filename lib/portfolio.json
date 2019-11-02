@@ -1,0 +1,86 @@
+{
+    "1": {
+        "id": 1, 
+        "name": "Bitcoin", 
+        "symbol": "BTC", 
+        "website_slug": "bitcoin", 
+        "rank": 1, 
+        "circulating_supply": 18025387.0, 
+        "total_supply": 18025387.0, 
+        "max_supply": 21000000.0, 
+        "quotes": {
+            "USD": {
+                "price": 9281.44927441, 
+                "volume_24h": 22495268538.1435, 
+                "market_cap": 167301715092.0, 
+                "percent_change_1h": 0.26, 
+                "percent_change_24h": 0.86, 
+                "percent_change_7d": -0.26
+            }
+        }, 
+        "last_updated": 1572694294
+    }, 
+    "1027": {
+        "id": 1027, 
+        "name": "Ethereum", 
+        "symbol": "ETH", 
+        "website_slug": "ethereum", 
+        "rank": 2, 
+        "circulating_supply": 108393501.0, 
+        "total_supply": 108393501.0, 
+        "max_supply": null, 
+        "quotes": {
+            "USD": {
+                "price": 183.555608691, 
+                "volume_24h": 8287385616.05971, 
+                "market_cap": 19896235043.0, 
+                "percent_change_1h": 0.26, 
+                "percent_change_24h": 0.35, 
+                "percent_change_7d": 0.7
+            }
+        }, 
+        "last_updated": 1572694286
+    }, 
+    "52": {
+        "id": 52, 
+        "name": "XRP", 
+        "symbol": "XRP", 
+        "website_slug": "ripple", 
+        "rank": 3, 
+        "circulating_supply": 43248091671.0, 
+        "total_supply": 99991316762.0, 
+        "max_supply": 100000000000.0, 
+        "quotes": {
+            "USD": {
+                "price": 0.294283086, 
+                "volume_24h": 1452961844.61186, 
+                "market_cap": 12727181882.0, 
+                "percent_change_1h": 0.12, 
+                "percent_change_24h": 0.61, 
+                "percent_change_7d": 0.25
+            }
+        }, 
+        "last_updated": 1572694265
+    }, 
+    "1831": {
+        "id": 1831, 
+        "name": "Bitcoin Cash", 
+        "symbol": "BCH", 
+        "website_slug": "bitcoin-cash", 
+        "rank": 4, 
+        "circulating_supply": 18090813.0, 
+        "total_supply": 18090813.0, 
+        "max_supply": 21000000.0, 
+        "quotes": {
+            "USD": {
+                "price": 283.241517597, 
+                "volume_24h": 2262324985.7433, 
+                "market_cap": 5124069187.0, 
+                "percent_change_1h": 0.37, 
+                "percent_change_24h": 1.31, 
+                "percent_change_7d": 9.64
+            }
+        }, 
+        "last_updated": 1572694267
+    }
+}

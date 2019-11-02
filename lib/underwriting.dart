@@ -2,56 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/flutter_dialogflow.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
-class HomeScreen extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return new _MyHomePageState();
-  }
-}
-/*
 
-class HomeScreenWidget extends State<HomeScreen>{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Underwriting"),
-        elevation: 0.4,
-      ),
-      body: Stack( fit:StackFit.expand, children: <Widget>[
-        Container(decoration: BoxDecoration(color: Colors.blueAccent)),
-        Column( mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[
-
-
-
-          ],
-
-
-      )
-
-      ],
-      ) ,
-
-    );
-  }
-}*/
-
-
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class UnderwritingScreen extends StatefulWidget {
+  UnderwritingScreen({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _UnderritingPageState createState() => new _UnderritingPageState();
 }
 
 /* https://github.com/VictorRancesCode/flutter_dialogflow/blob/master/example/lib/main.dart */
 
-class _MyHomePageState extends State<HomeScreen> {
+class _UnderritingPageState extends State<UnderwritingScreen> {
 
   final List<ChatMessage> _messages = <ChatMessage>[];
   final TextEditingController _textController = new TextEditingController();
@@ -114,6 +76,18 @@ class _MyHomePageState extends State<HomeScreen> {
     Response(text);
   }
 
+
+/*  RaisedButton(
+  shape: new RoundedRectangleBorder(
+  borderRadius: new BorderRadius.circular(18.0),
+  side: BorderSide(color: Colors.red)),
+  onPressed: () {},
+  color: Colors.red,
+  textColor: Colors.white,
+  child: Text("Buy now".toUpperCase(),
+  style: TextStyle(fontSize: 14)),
+  )*/
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -125,6 +99,7 @@ class _MyHomePageState extends State<HomeScreen> {
             child: new ListView.builder(
               padding: new EdgeInsets.all(8.0),
               reverse: true,
+
               itemBuilder: (_, int index) => _messages[index],
               itemCount: _messages.length,
             )),

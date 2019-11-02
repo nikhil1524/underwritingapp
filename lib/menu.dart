@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:insurance_underwriting/disclaimer.dart';
 import 'package:insurance_underwriting/drawerItem.dart';
-import 'package:insurance_underwriting/home.dart';
+import 'package:insurance_underwriting/underwriting.dart';
+import 'package:insurance_underwriting/dashboard.dart';
+
+import 'main.dart';
 
 class MenuScreen extends StatefulWidget {
   @override
@@ -16,10 +19,12 @@ class MenuScreenWidget extends State<MenuScreen> {
 
   final drawerItems = [
     new DrawerItem("Health Declaration", Icons.assignment_ind, "main"),
-    new DrawerItem("Investment", Icons.account_balance,"accountBal"),
-    new DrawerItem("Logout",null ,null)
+    new DrawerItem("Investment", Icons.account_balance, "accountBal"),
+    new DrawerItem(
+        "Product Investment Returns", Icons.access_time, "productInvestment"),
+    new DrawerItem("Profile", Icons.account_circle, "profile"),
+    new DrawerItem("Logout", null, null)
   ];
-
 
   _getDrawerItemWidget(int pos) {
     switch (pos) {
@@ -27,18 +32,16 @@ class MenuScreenWidget extends State<MenuScreen> {
         return new DisclaimerScreen();
       case 1:
         return new MenuScreen();
-
-
       default:
-        return new Text("Main Screen");
+        return new DashboardTabs(1, _makePortfolioDisplay());
     }
   }
 
+  _onSelectItem(int index) {
+    setState(() => _selectedIndex = index);
+    Navigator.of(context).pop(); // close the drawer
+  }
 
-_onSelectItem(int index) {
-  setState(() => _selectedIndex = index);
-  Navigator.of(context).pop(); // close the drawer
-}
   @override
   Widget build(BuildContext context) {
     List<Widget> drawerOptions = [];
@@ -56,11 +59,11 @@ _onSelectItem(int index) {
     }
     // TODO: implement build
     return new Scaffold(
-        appBar: AppBar(title: Text("Underwriting")),
+        appBar: AppBar(title: Text("Life And Pension")),
         drawer: new Drawer(
             child: new Column(children: <Widget>[
           new UserAccountsDrawerHeader(
-            decoration: BoxDecoration(color: Colors.blueAccent),
+              decoration: BoxDecoration(color: Colors.blueAccent),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.black,
                 child: Text('NN'),
@@ -72,7 +75,34 @@ _onSelectItem(int index) {
               )),
           new Column(children: drawerOptions)
         ])),
-        body: _getDrawerItemWidget(_selectedIndex)
-    );
+        body: _getDrawerItemWidget(_selectedIndex));
   }
+
+  _makePortfolioDisplay() {
+    print("making portfolio display");
+    Map portfolioTotals = {};
+    List neededPriceSymbols = [];
+
+    portfolioMap.forEach((coin, transactions) {
+      num quantityTotal = 0;
+      transactions.forEach((value) {
+        quantityTotal += value["quantity"];
+      });
+      portfolioTotals[coin] = quantityTotal;
+      neededPriceSymbols.add(coin);
+    });
+
+    portfolioDisplay = [];
+    num totalPortfolioValue = 0;
+    num total24hChange = 0;
+    num total7dChange = 0;
+    portfolioDisplay.forEach((coin) {
+      total24hChange += (coin["percent_change_24h"] *
+          ((coin["price_usd"] * coin["total_quantity"]) / totalPortfolioValue));
+      total7dChange += (coin["percent_change_7d"] *
+          ((coin["price_usd"] * coin["total_quantity"]) / totalPortfolioValue));
+    });
+
+   }
+
 }

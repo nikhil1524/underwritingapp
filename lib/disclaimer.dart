@@ -2,19 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:insurance_underwriting/home.dart';
+import 'package:insurance_underwriting/underwriting.dart';
 
-class DisclaimerScreen extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return new DisclaimerScreenWidged();
-  }
-}
-
-String disclaimer =
-    //"Disclaimer: I commit that i will give the details \n best to my knowledge";
-
+final String disclaimer =
     "I accept that our company will handle personal data\n"
     "given by me and may check my medical history. Our\n"
     "company handles and may disclose data in accordance\n"
@@ -30,7 +20,15 @@ String disclaimer =
     "direct marketing to its customers.Customers are entit-\n"
     "led to forbid direct marketing.\n"
     "Read more about our company privacy policy.";
-bool isChecked =false;
+bool isChecked = false;
+
+class DisclaimerScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return new DisclaimerScreenWidged();
+  }
+}
 
 class DisclaimerScreenWidged extends State<DisclaimerScreen> {
   get selecisCheckedted => false;
@@ -44,61 +42,65 @@ class DisclaimerScreenWidged extends State<DisclaimerScreen> {
           elevation: 0.4,
         ),*/
         body: Stack(fit: StackFit.expand, children: <Widget>[
-          Container(decoration: BoxDecoration(color: Colors.white10)),
-          Column(
-            children: <Widget>[
-              Expanded(flex: 3, child: Column()),
-              Expanded(
-                  flex: 4,
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: <Widget>[
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Checkbox(
-                                        value: isChecked,
-                                        activeColor: Colors.blue,
-                                        onChanged: (state) {
-                                          setState(() {
-                                            isChecked = state;
-                                          });
-                                          onChangeCheckBox(state);
-                                        })
-                                  ]),
-                              Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: <Widget>[Text(disclaimer)])
-                            ]),
-                        Container(
-                          margin: const EdgeInsets.only(top: 10.0),
-                          padding: EdgeInsets.only(
-                              top: 4.0, bottom: 4.0, right: 10.0, left: 10.0),
-                          child: FloatingActionButton.extended(
-                              onPressed: !isChecked ? null : () { buttonPressed();},
-                              key: Key("buttonKey"),
-                              label: Text('Approve'),
-                              icon: Icon(Icons.thumb_up),
-                              backgroundColor: Colors.pink),
-                        ),
-                      ]))
-            ],
-          )
-        ]));
+      Container(decoration: BoxDecoration(color: Colors.white10)),
+      Column(
+        children: <Widget>[
+          Expanded(flex: 3, child: Column()),
+          Expanded(
+              flex: 4,
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Checkbox(
+                                    value: isChecked,
+                                    activeColor: Colors.blue,
+                                    onChanged: (state) {
+                                      setState(() {
+                                        isChecked = state;
+                                      });
+                                      onChangeCheckBox(state);
+                                    })
+                              ]),
+                          Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[Text(disclaimer)])
+                        ]),
+                    Container(
+                      margin: const EdgeInsets.only(top: 10.0),
+                      padding: EdgeInsets.only(
+                          top: 4.0, bottom: 4.0, right: 10.0, left: 10.0),
+                      child: FloatingActionButton.extended(
+                          onPressed: !isChecked
+                              ? null
+                              : () {
+                                  buttonPressed();
+                                },
+                          key: Key("buttonKey"),
+                          label: Text('Approve'),
+                          icon: Icon(Icons.thumb_up),
+                          backgroundColor: Colors.pink),
+                    ),
+                  ]))
+        ],
+      )
+    ]));
   }
 
   buttonPressed() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        context, MaterialPageRoute(builder: (context) => UnderwritingScreen()));
   }
 
-  buttonActive() {}
+  buttonActive() {
+  }
 
   onChangeCheckBox(bool state) {
-
     buttonActive();
   }
 }

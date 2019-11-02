@@ -1,10 +1,39 @@
 import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:insurance_underwriting/disclaimer.dart';
+import 'package:flutter/services.dart';
+import 'package:http/http.dart' as http;
+import 'package:path_provider/path_provider.dart';
 import 'package:insurance_underwriting/menu.dart';
 
-void main() => runApp(MyApp());
+
+Map portfolioMap;
+
+//void main() => runApp(MyApp());
+
+
+void main() async {
+  print('hi');
+  print(getApplicationDocumentsDirectory());
+  await getApplicationDocumentsDirectory().then((Directory directory) async {
+    print(directory.path);
+    File jsonFile = new File(directory.path + "/portfolio.json");
+    if (jsonFile.existsSync()) {
+      portfolioMap = json.decode(jsonFile.readAsStringSync());
+    } else {
+      jsonFile.createSync();
+      jsonFile.writeAsStringSync("{}");
+      portfolioMap = {};
+    }
+    if (portfolioMap == null) {
+      portfolioMap = {};
+    }
+  });
+  runApp(MyApp());
+}
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -61,15 +90,11 @@ class SplashScreenState extends State<SplashScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     CircleAvatar(
-                        backgroundColor: Colors.white,
+                        backgroundColor: Colors.transparent,
                         radius: 50.0,
-                        child: Icon(
-                          Icons.accessible,
-                          color: Colors.black,
-                          size: 50.0,
-                        )),
+                        child:  Image.asset('assets/images/logo.png')),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
-                    Text("UnderWriting",
+                    Text("Pension",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 24.0,

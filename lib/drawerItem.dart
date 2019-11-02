@@ -5,6 +5,4 @@ class DrawerItem {
   IconData icon;
   String view;
   DrawerItem(this.title, this.icon,this.view);
-
-
 }
