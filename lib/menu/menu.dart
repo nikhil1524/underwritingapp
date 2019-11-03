@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:insurance_underwriting/disclaimer.dart';
-import 'package:insurance_underwriting/drawerItem.dart';
-import 'package:insurance_underwriting/underwriting.dart';
-import 'package:insurance_underwriting/dashboard.dart';
+import 'package:insurance_underwriting/underwriting/disclaimer.dart';
+import 'drawerItem.dart';
+import 'package:insurance_underwriting/portfolio/dashboard.dart';
 
-import 'main.dart';
+import '../main.dart';
 
 class MenuScreen extends StatefulWidget {
   @override
@@ -30,8 +29,6 @@ class MenuScreenWidget extends State<MenuScreen> {
     switch (pos) {
       case 0:
         return new DisclaimerScreen();
-      case 1:
-        return new MenuScreen();
       default:
         return new DashboardTabs(1, _makePortfolioDisplay());
     }

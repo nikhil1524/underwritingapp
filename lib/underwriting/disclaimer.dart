@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:insurance_underwriting/underwriting.dart';
+import 'package:insurance_underwriting/underwriting/underwriting.dart';
 
 final String disclaimer =
     "I accept that our company will handle personal data\n"

@@ -1,0 +1,34 @@
+{
+    "Activa10": [
+        {
+            "quantity": 10,
+            "price_usd": 10.2,
+            "exchange": "NOK",
+            "time_epoch": "null",
+            "notes": "_notesController.text"
+        },
+        {
+            "quantity": 10,
+            "price_usd": 10.2,
+            "exchange": "NOK",
+            "time_epoch": "null",
+            "notes": "_notesController.text"
+        }
+    ],
+    "Activa40":[
+        {
+            "quantity": 90,
+            "price_usd": 9.2,
+            "exchange": "NOK",
+            "time_epoch": "null",
+            "notes": "_notesController.text"
+        },
+        {
+            "quantity": 100,
+            "price_usd": 101.2,
+            "exchange": "NOK",
+            "time_epoch": "null",
+            "notes": "_notesController.text"
+        }
+    ]
+}

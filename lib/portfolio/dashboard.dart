@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_circular_chart/flutter_circular_chart.dart';
-import 'main.dart';
+import '../main.dart';
 
 class DashboardTabs extends StatefulWidget{
 DashboardTabs(this.tab, this.makePortfolioDisplay);
