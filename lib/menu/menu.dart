@@ -63,7 +63,7 @@ class MenuScreenWidget extends State<MenuScreen> {
               decoration: BoxDecoration(color: Colors.blueAccent),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.black,
-                child: Text('NN'),
+                child: Text('Nikhil N'),
               ),
               accountName: new Text(
                 "Nikhil N",

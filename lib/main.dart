@@ -10,6 +10,8 @@ import 'package:insurance_underwriting/menu/menu.dart';
 
 Map portfolioMap;
 Map tempPortfolioData;
+Map totalPortfolioStats;
+
 //void main() => runApp(MyApp());
 Future<Null> getDataFromServer() async {
   Future<String> loadData() async {
