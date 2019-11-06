@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:insurance_underwriting/underwriting/disclaimer.dart';
 import 'drawerItem.dart';
@@ -77,6 +79,7 @@ class MenuScreenWidget extends State<MenuScreen> {
 
   _makePortfolioDisplay() {
     print("making portfolio display");
+    print(portfolioMap);
     Map portfolioTotals = {};
     List neededPriceSymbols = [];
 
@@ -90,7 +93,28 @@ class MenuScreenWidget extends State<MenuScreen> {
     });
 
     portfolioDisplay = [];
+    var i=1;
     num totalPortfolioValue = 0;
+   portfolioMap.forEach((symbol, transactions) {
+     transactions.forEach((t){
+      portfolioDisplay.add({
+       "symbol": i.toString(),
+       "price_usd": t["price_usd"],
+       "percent_change_24h": 1,
+       "percent_change_7d": 1,
+       "total_quantity": t["quantity"],
+       "id": i,
+       "name": symbol
+     });
+      i++;
+     }
+       
+     );
+     
+   });
+   print(portfolioDisplay.length);
+
+   
     num total24hChange = 0;
     num total7dChange = 0;
     portfolioDisplay.forEach((coin) {

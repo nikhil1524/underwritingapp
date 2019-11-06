@@ -9,21 +9,23 @@ import 'package:path_provider/path_provider.dart';
 import 'package:insurance_underwriting/menu/menu.dart';
 
 Map portfolioMap;
+List marketListData;
 Map tempPortfolioData;
 Map totalPortfolioStats;
-
+var shortenOn =false;
 //void main() => runApp(MyApp());
 Future<Null> getDataFromServer() async {
   Future<String> loadData() async {
     var response = await rootBundle.loadString('assets/data/portfolio.json');
-    tempPortfolioData = new JsonDecoder().convert(response);
+    tempPortfolioData = new JsonDecoder().convert(response)["holdings"];
   }
   Future<Null> _pullData() async {
     var response = await http.get(
         Uri.encodeFull(
             "https://github.com/nikhil1524/underwritingapp/blob/master/lib/portfolio.json"),
         headers: {"Accept": "application/json"});
-    tempPortfolioData = new JsonDecoder().convert(response.body);
+    portfolioMap = new JsonDecoder().convert(response.body)["holdings"];    
+    tempPortfolioData = new JsonDecoder().convert(response.body)["holdings"];
   }
 
   List<Future> futures = [];
@@ -31,6 +33,54 @@ Future<Null> getDataFromServer() async {
 
   await Future.wait(futures);
 }
+
+normalizeNum(num input) {
+  if (input == null) {
+    input = 0;}
+  if (input >= 100000) {
+    return numCommaParse(input.round().toString());
+  } else if (input >= 1000) {
+    return numCommaParse(input.toStringAsFixed(2));
+  } else {
+    return input.toStringAsFixed(6 - input.round().toString().length);
+  }
+}
+numCommaParse(numString) {
+  if (shortenOn) {
+    String str = num.parse(numString ?? "0").round().toString().replaceAllMapped(
+        new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => "${m[1]},");
+    List<String> strList = str.split(",");
+
+    if (strList.length > 3) {
+      return strList[0] +
+          "." +
+          strList[1].substring(0, 4 - strList[0].length) +
+          "B";
+    } else if (strList.length > 2) {
+      return strList[0] +
+          "." +
+          strList[1].substring(0, 4 - strList[0].length) +
+          "M";
+    } else {
+      return num.parse(numString ?? "0").toString().replaceAllMapped(
+          new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => "${m[1]},");
+    }
+  }
+
+  return num.parse(numString ?? "0").toString().replaceAllMapped(
+      new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => "${m[1]},");
+}
+
+normalizeNumNoCommas(num input) {
+  if (input == null) {
+    input = 0;}
+  if (input >= 1000) {
+    return input.toStringAsFixed(2);
+  } else {
+    return input.toStringAsFixed(6 - input.round().toString().length);
+  }
+}
+
 
 void main() async {
   await getDataFromServer();
@@ -141,4 +191,5 @@ class SplashScreenState extends State<SplashScreen> {
       ],
     ));
   }
+
 }
