@@ -5,6 +5,11 @@
             "Activa10": [
                 {
                     "quantity": 10,
+
+                    "percent_change_24h": 0.02,
+                    "percent_change_7d": -3.2,
+                    "id": 12,
+                    "symbol":"AB10",
                     "price_usd": 10.2,
                     "exchange": "NOK",
                     "time_epoch": "null",
@@ -12,6 +17,10 @@
                 },
                 {
                     "quantity": 10,
+                    "percent_change_24h": 0.02,
+                    "percent_change_7d": -3.2,
+                    "symbol":"AB10",
+                    "id": 12,
                     "price_usd": 10.2,
                     "exchange": "NOK",
                     "time_epoch": "null",
@@ -21,6 +30,10 @@
             "Activa40": [
                 {
                     "quantity": 90,
+                    "id": 1,
+                    "percent_change_24h": 2.02,
+                    "percent_change_7d": 8.2,
+                    "symbol":"AB40",
                     "price_usd": 9.2,
                     "exchange": "NOK",
                     "time_epoch": "null",
@@ -28,11 +41,66 @@
                 },
                 {
                     "quantity": 100,
+                    "percent_change_24h": 2.02,
+                    "percent_change_7d": 8.2,
+                    "id": 1,
+                    "symbol":"AB40",
                     "price_usd": 101.2,
                     "exchange": "NOK",
                     "time_epoch": "null",
                     "notes": "_notesController.text"
                 }
+                
+            ],
+            "NorwayOF": [
+                {
+                    "id": 8,
+                    "quantity": 90,
+                    "percent_change_24h": 1.02,
+                    "percent_change_7d": 8.2,
+                    "symbol":"NOROIL",
+                    "price_usd": 9.2,
+                    "exchange": "NOK",
+                    "time_epoch": "null",
+                    "notes": "_notesController.text"
+                },
+                {
+                    "quantity": 100,
+                    "percent_change_24h": 2.02,
+                    "percent_change_7d": 8.2,
+                    "id": 8,
+                    "symbol":"AB40",
+                    "price_usd": 101.2,
+                    "exchange": "NOK",
+                    "time_epoch": "null",
+                    "notes": "_notesController.text"
+                }
+                
+            ],
+            "LONDONGas": [
+                {
+                    "id": 67,
+                    "quantity": 90,
+                    "percent_change_24h": 1.02,
+                    "percent_change_7d": 8.2,
+                    "symbol":"LDNG",
+                    "price_usd": 9.2,
+                    "exchange": "NOK",
+                    "time_epoch": "null",
+                    "notes": "_notesController.text"
+                },
+                {
+                    "quantity": 100,
+                    "percent_change_24h": 2.02,
+                    "percent_change_7d": 8.2,
+                    "id": 67,
+                    "symbol":"LDNG",
+                    "price_usd": 101.2,
+                    "exchange": "NOK",
+                    "time_epoch": "null",
+                    "notes": "_notesController.text"
+                }
+                
             ]
         }
 }

@@ -98,12 +98,12 @@ class MenuScreenWidget extends State<MenuScreen> {
    portfolioMap.forEach((symbol, transactions) {
      transactions.forEach((t){
       portfolioDisplay.add({
-       "symbol": i.toString(),
+       "symbol": t["symbol"],
        "price_usd": t["price_usd"],
-       "percent_change_24h": 1,
-       "percent_change_7d": 1,
+       "percent_change_24h": t["percent_change_24h"],
+       "percent_change_7d": t["percent_change_7d"],
        "total_quantity": t["quantity"],
-       "id": i,
+       "id": t["id"],
        "name": symbol
      });
       i++;
