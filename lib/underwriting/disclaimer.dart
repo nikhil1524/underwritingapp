@@ -42,7 +42,7 @@ class DisclaimerScreenWidged extends State<DisclaimerScreen> {
           elevation: 0.4,
         ),*/
         body: Stack(fit: StackFit.expand, children: <Widget>[
-      Container(decoration: BoxDecoration(color: Colors.white10)),
+      Container(decoration: BoxDecoration(color: Colors.white)),
       Column(
         children: <Widget>[
           Expanded(flex: 3, child: Column()),
@@ -52,13 +52,13 @@ class DisclaimerScreenWidged extends State<DisclaimerScreen> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Checkbox(
-                                    value: isChecked,
+                                    value: isChecked, 
                                     activeColor: Colors.blue,
                                     onChanged: (state) {
                                       setState(() {
@@ -68,7 +68,7 @@ class DisclaimerScreenWidged extends State<DisclaimerScreen> {
                                     })
                               ]),
                           Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[Text(disclaimer)])
                         ]),
                     Container(
@@ -84,7 +84,7 @@ class DisclaimerScreenWidged extends State<DisclaimerScreen> {
                           key: Key("buttonKey"),
                           label: Text('Approve'),
                           icon: Icon(Icons.thumb_up),
-                          backgroundColor: Colors.pink),
+                          backgroundColor: Colors.blueAccent),
                     ),
                   ]))
         ],

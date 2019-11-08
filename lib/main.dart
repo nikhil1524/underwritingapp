@@ -162,7 +162,7 @@ class SplashScreenState extends State<SplashScreen> {
                         radius: 50.0,
                         child: Image.asset('assets/images/logo.png')),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
-                    Text("Pension",
+                    Text("Pension Savings",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 24.0,
@@ -177,7 +177,7 @@ class SplashScreenState extends State<SplashScreen> {
                   LinearProgressIndicator(),
                   Padding(padding: EdgeInsets.only(top: 20)),
                   Text(
-                    " UnderWriting Declaration",
+                    " loading...",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 18.0,
