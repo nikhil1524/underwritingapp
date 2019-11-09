@@ -1,0 +1,35 @@
+{
+  "common": {
+    "WS_Title_Pension_Savings": "Pension Savings"
+  },
+  "page": {
+    "profile": {
+      "language": "Språk",
+      "save": "lagre"
+    },
+    "menu": {
+      "title": "Livet og pensjonen",
+      "health_declaration": "Helseerklæring",
+      "investment": "Investering",
+      "product_investment_returns": "Avkastning av produktinvesteringer",
+      "profile": "Profil",
+      "logout": "Logg ut"
+    },
+    "dashboard":{
+      "title":"portefølje",
+      "timeline":"Tidslinje",
+      "breakdown":"Sammenbrudd",
+      "portfolioValue":"Porteføljeverdi",
+      "total_net":"Totalt netto",
+      "total_cost":"Totalkostnad",
+      "fund_name":"Fondets navn",
+      "holdings": "Holdings",
+      "percent":"Prosent"
+    },
+    "underwrting":{
+      "declaration":"Jeg godtar at selskapet vårt vil håndtere personopplysninger som er gitt av meg og kan sjekke sykehistorien min. Vårt \n selskap håndterer og kan avsløre data i samsvar med \n data og sørger for at alle personopplysninger blir håndtert \n bankhemmelighet. Personopplysninger håndteres for å \n levere tjenester og for bankens formål \n drift og risikostyring. \n Data blir samlet inn fra kunden, fra registre \n vedlikeholdt av myndighetene, fra kredittinformasjon \n og betaling standardregistre og fra andre pålitelige \n kilder. Selskapet bruker også sitt kunderegister for \n direkte markedsføring til sine kunder. Kunder får rett til å forby direkte markedsføring. \n Les mer om vår virksomhets personvernregler. ",
+      "approve":"godkjenne"
+
+    }
+  }
+}

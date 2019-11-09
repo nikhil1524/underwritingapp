@@ -1,7 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:insurance_underwriting/menu/profile/profile_edit.dart';
 import 'package:insurance_underwriting/underwriting/disclaimer.dart';
+import 'package:insurance_underwriting/util/mutiLing_global_translation.dart';
 import 'drawerItem.dart';
 import 'package:insurance_underwriting/portfolio/dashboard.dart';
 
@@ -19,18 +21,20 @@ class MenuScreenWidget extends State<MenuScreen> {
   int _selectedIndex = -1;
 
   final drawerItems = [
-    new DrawerItem("Health Declaration", Icons.assignment_ind, "main"),
-    new DrawerItem("Investment", Icons.account_balance, "accountBal"),
+    new DrawerItem(allTranslations.text("page.menu.health_declaration") , Icons.assignment_ind, "main"),
+    new DrawerItem(allTranslations.text("page.menu.investment"), Icons.account_balance, "accountBal"),
     new DrawerItem(
-        "Product Investment Returns", Icons.access_time, "productInvestment"),
-    new DrawerItem("Profile", Icons.account_circle, "profile"),
-    new DrawerItem("Logout", null, null)
+        allTranslations.text("page.menu.product_investment_returns"), Icons.access_time, "productInvestment"),
+    new DrawerItem(allTranslations.text("page.menu.profile"), Icons.account_circle, "profile"),
+    new DrawerItem(allTranslations.text("page.menu.logout"), null, null)
   ];
 
   _getDrawerItemWidget(int pos) {
     switch (pos) {
       case 0:
         return new DisclaimerScreen();
+      case 3:
+        return new ProfileEditPage();
       default:
         return new DashboardTabs(1, _makePortfolioDisplay());
     }
@@ -58,7 +62,7 @@ class MenuScreenWidget extends State<MenuScreen> {
     }
     // TODO: implement build
     return new Scaffold(
-        appBar: AppBar(title: Text("Life And Pension")),
+        appBar: AppBar(title: Text(allTranslations.text("page.menu.title") )),
         drawer: new Drawer(
             child: new Column(children: <Widget>[
           new UserAccountsDrawerHeader(
@@ -78,8 +82,6 @@ class MenuScreenWidget extends State<MenuScreen> {
   }
 
   _makePortfolioDisplay() {
-    print("making portfolio display");
-    print(portfolioMap);
     Map portfolioTotals = {};
     List neededPriceSymbols = [];
 
@@ -113,8 +115,6 @@ class MenuScreenWidget extends State<MenuScreen> {
      
    });
    print(portfolioDisplay.length);
-
-   
     num total24hChange = 0;
     num total7dChange = 0;
     portfolioDisplay.forEach((coin) {

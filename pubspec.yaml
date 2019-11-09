@@ -23,6 +23,8 @@ dependencies:
   path_provider: ^0.4.0
   flutter_circular_chart: ^0.1.0
   flutter_tts: ^0.6.0
+  flutter_localizations: # add this
+    sdk: flutter # add this
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -33,6 +35,9 @@ dev_dependencies:
     sdk: flutter
   flutter_dialogflow: ^0.1.0
   flutter_tts: ^0.6.0
+  intl: ^0.15.5
+  rxdart: ^0.21.0
+  shared_preferences: ^0.4.2
 
 
 # For information on the generic Dart part of this file, see the
@@ -53,6 +58,8 @@ flutter:
   assets:
       - assets/images/logo.png
       - assets/data/portfolio.json
+      - assets/locale/en.json
+      - assets/locale/nb.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

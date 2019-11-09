@@ -47,7 +47,7 @@ class _UnderritingPageState extends State<UnderwritingScreen> {
 
   void Response(query) async {
     _textController.clear();
-    Dialogflow dialogflow =Dialogflow(token: "3a33a3a4f3b447ca8dcdd6793fab29c8");
+    Dialogflow dialogflow =Dialogflow(token: "0c086e0a98ca4eb9be891687a015d298");
     AIResponse response = await dialogflow.sendQuery(query);
     ChatMessage message = new ChatMessage(
       text: response.getMessageResponse(),

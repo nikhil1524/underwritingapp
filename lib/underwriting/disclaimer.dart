@@ -3,23 +3,24 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:insurance_underwriting/underwriting/underwriting.dart';
+import 'package:insurance_underwriting/util/mutiLing_global_translation.dart';
 
-final String disclaimer =
-    "I accept that our company will handle personal data\n"
-    "given by me and may check my medical history. Our\n"
-    "company handles and may disclose data in accordance\n"
-    "with legislation governing the handling of personal\n"
-    "data and makes sure all personal data is handled \n"
-    "bank secrecy. Personal data is handled in order to\n"
-    "provide services and for the purposes of the bank\n"
-    "operations and risk management.\n"
-    "Data is collected from the customer, from registers \n"
-    "maintained by the authorities, from credit information \n"
-    "and payment default registers and from other reliable\n"
-    "sources. Company also uses its customer register for \n"
-    "direct marketing to its customers.Customers are entit-\n"
-    "led to forbid direct marketing.\n"
-    "Read more about our company privacy policy.";
+ final String disclaimer = allTranslations.text("page.underwrting.declaration");
+//     "I accept that our company will handle personal data\n"
+//     "given by me and may check my medical history. Our\n"
+//     "company handles and may disclose data in accordance\n"
+//     "with legislation governing the handling of personal\n"
+//     "data and makes sure all personal data is handled \n"
+//     "bank secrecy. Personal data is handled in order to\n"
+//     "provide services and for the purposes of the bank\n"
+//     "operations and risk management.\n"
+//     "Data is collected from the customer, from registers \n"
+//     "maintained by the authorities, from credit information \n"
+//     "and payment default registers and from other reliable\n"
+//     "sources. Company also uses its customer register for \n"
+//     "direct marketing to its customers.Customers are entit-\n"
+//     "led to forbid direct marketing.\n"
+//     "Read more about our company privacy policy.";
 bool isChecked = false;
 
 class DisclaimerScreen extends StatefulWidget {
@@ -82,7 +83,7 @@ class DisclaimerScreenWidged extends State<DisclaimerScreen> {
                                   buttonPressed();
                                 },
                           key: Key("buttonKey"),
-                          label: Text('Approve'),
+                          label: Text(allTranslations.text("page.underwrting.approve")),
                           icon: Icon(Icons.thumb_up),
                           backgroundColor: Colors.blueAccent),
                     ),

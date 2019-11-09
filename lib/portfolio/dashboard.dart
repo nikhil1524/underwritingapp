@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_circular_chart/flutter_circular_chart.dart';
 import 'package:http/http.dart' as http;
 import 'package:insurance_underwriting/portfolio/breakdown_item.dart';
+import 'package:insurance_underwriting/util/mutiLing_global_translation.dart';
 import 'dart:math';
 import 'dart:convert';
 
@@ -201,7 +202,6 @@ class DashBoardTabsState extends State<DashboardTabs>
   }
 
   _updateBreakdown() {
-    print('i am updating price');
     cost = 0;
     net = 0;
     netPercent = 0;
@@ -211,9 +211,7 @@ class DashBoardTabsState extends State<DashboardTabs>
         cost += transaction["quantity"] * transaction["price_usd"];
       });
     });
-    print(cost.toString());
     net = value - cost;
-    print(net.toString());
     if (cost > 0) {
       netPercent = ((value - cost) / cost) * 100;
     } else {
@@ -302,7 +300,7 @@ class DashBoardTabsState extends State<DashboardTabs>
             leading: new Container(),
             //elevation: appBarElevation,
             title:
-                new Text("Portfolio", style: Theme.of(context).textTheme.title),
+                new Text(allTranslations.text("page.dashboard.title"), style: Theme.of(context).textTheme.title),
             bottom: new PreferredSize(
                 preferredSize: const Size.fromHeight(25.0),
                 child: new Container(
@@ -314,8 +312,8 @@ class DashBoardTabsState extends State<DashboardTabs>
                       unselectedLabelColor: Theme.of(context).disabledColor,
                       labelColor: Theme.of(context).primaryIconTheme.color,
                       tabs: <Widget>[
-                        new Tab(text: "Timeline"),
-                        new Tab(text: "Breakdown"),
+                        new Tab(text: allTranslations.text("page.dashboard.timeline")),
+                        new Tab(text: allTranslations.text("page.dashboard.breakdown")),
                       ],
                     ))),
           ),
@@ -353,7 +351,7 @@ class DashBoardTabsState extends State<DashboardTabs>
                         new Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            new Text("Portfolio Value",
+                            new Text(allTranslations.text("page.dashboard.portfolioValue"),
                                 style: Theme.of(context).textTheme.caption),
                             new Row(
                               children: <Widget>[
@@ -371,7 +369,7 @@ class DashBoardTabsState extends State<DashboardTabs>
                         new Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            new Text("Total Net",
+                            new Text(allTranslations.text("page.dashboard.total_net"),
                                 style: Theme.of(context).textTheme.caption),
                             new PercentDollarChange(
                               exact: net,
@@ -382,7 +380,7 @@ class DashBoardTabsState extends State<DashboardTabs>
                         new Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: <Widget>[
-                            new Text("Total Cost",
+                            new Text(allTranslations.text("page.dashboard.total_cost"),
                                 style: Theme.of(context).textTheme.caption),
                             new Text(
                                 "NOK " + numCommaParse(cost.toStringAsFixed(2)),
@@ -448,7 +446,7 @@ class DashBoardTabsState extends State<DashboardTabs>
                                         : "Currency ⬇",
                                     style: Theme.of(context).textTheme.body2)
                                 : new Text(
-                                    "Fund Name",
+                                    allTranslations.text("page.dashboard.fund_name"),
                                     style: Theme.of(context)
                                         .textTheme
                                         .body2
@@ -496,7 +494,7 @@ class DashBoardTabsState extends State<DashboardTabs>
                           alignment: Alignment.centerRight,
                           width: MediaQuery.of(context).size.width *
                               columnProps[2],
-                          child: new Text("Percent of Total",
+                          child: new Text(allTranslations.text("page.dashboard.percent"),
                               style: Theme.of(context)
                                   .textTheme
                                   .body2

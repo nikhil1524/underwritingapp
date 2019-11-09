@@ -1,0 +1,33 @@
+{
+  "common": {
+    "WS_Title_Pension_Savings": "Pension Savings"
+  },
+  "page": {
+    "profile": {
+      "language": "language",
+      "save": "Save"
+    },
+    "menu":{
+      "title": "Life And Pension",
+      "health_declaration":"Health Declaration",
+      "investment": "Investment",
+      "product_investment_returns":"Product Investment Returns",
+      "profile": "Profile",
+      "logout":"Logout"
+    },
+    "dashboard":{
+      "title":"Portfoilio",
+      "timeline":"Timeline",
+      "breakdown":"Breakdown",
+      "portfolioValue":"Portfolio Value",
+      "total_net":"Total Net",
+      "total_cost":"Total Cost",
+      "fund_name":"Fund Name",
+      "holdings": "Holdings",
+      "percent":"Percent"
+    },"underwrting":{
+      "declaration":"I accept that our company will handle personal data given by me and may check my medical history. Our\n company handles and may disclose data in accordance\n data and makes sure all personal data is handled \n bank secrecy. Personal data is handled in order to\n provide services and for the purposes of the bank\n  operations and risk management.\n Data is collected from the customer, from registers \n maintained by the authorities, from credit information \n and payment default registers and from other reliable\n sources. Company also uses its customer register for \n direct marketing to its customers.Customers are entit-\n led to forbid direct marketing.\n Read more about our company privacy policy.",
+      "approve":"approve"
+    }
+  }
+}
